@@ -3,6 +3,9 @@ import random
 
 tim = Turtle()
 screen = Screen()
+tim.pensize(10)
+tim.speed(5)
+
 colors = ["red", "green", "blue", "orange", "purple", "yellow", "violet", "gray"]
 
 direction = {
@@ -12,16 +15,14 @@ direction = {
     "south": 270,
 }
 
-tim.pensize(10)
-tim.speed(5)
-
 
 for _ in range(50):
-    random_direction = random.choice(list(direction.values()))
-    random_color = random.choice(colors)
+    # tim will do a random walk
+    random_direction = random.choice(list(direction.values()))  # picks a random direction
+    random_color = random.choice(colors)  # picks a random color
     tim.pencolor(random_color)
     tim.setheading(random_direction)
-    tim.forward(50)
+    tim.forward(50)  # tim moves forward
 
 
 screen.exitonclick()
